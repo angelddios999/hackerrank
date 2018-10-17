@@ -1,5 +1,8 @@
 package com.angel.hackerrank;
 
+/**
+ * {@link https://www.hackerrank.com/challenges/counting-valleys/problem}
+ */
 public class CountingValleys {
 
     static int countingValleys(int n, String s) {

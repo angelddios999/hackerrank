@@ -2,9 +2,11 @@ package com.angel.hackerrank;
 
 import java.util.*;
 
+/**
+ * {@link https://www.hackerrank.com/challenges/sock-merchant/problem}
+ */
 public class SockMerchant {
 
-    // Complete the sockMerchant function below.
     static int sockMerchant(int n, int[] ar) {
         int result = 0;
         if (Objects.nonNull(ar)) {
