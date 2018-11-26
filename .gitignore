@@ -8,4 +8,6 @@
 .project
 .settings/
 .vscode/
+.idea/
+hackerrank.iml
 target/
