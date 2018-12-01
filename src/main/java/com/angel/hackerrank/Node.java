@@ -1,29 +1,88 @@
 package com.angel.hackerrank;
 
 public class Node {
-    Node left;
-    Node right;
-    int data;
+    private Node left;
+    private Node right;
+    private int data;
 
-    Node(int data) {
+    public Node(int data) {
         this.data = data;
-        left = null;
-        right = null;
     }
 
-    public static Node insert(Node root, int data) {
-        if(root == null) {
-            return new Node(data);
-        } else {
-            Node cur;
-            if(data <= root.data) {
-                cur = insert(root.left, data);
-                root.left = cur;
+    public void insert(int value) {
+        if(value <= data) {
+            if(left == null) {
+                left = new Node(value);
             } else {
-                cur = insert(root.right, data);
-                root.right = cur;
+                left.insert(value);
             }
-            return root;
+        } else {
+            if(right == null) {
+                right = new Node(value);
+            } else {
+                right.insert(value);
+            }
         }
+    }
+
+    public boolean contains(int value) {
+        if(value == data) {
+            return true;
+        }
+        if(value < data) {
+            if(left == null) {
+                return false;
+            } else {
+                return left.contains(value);
+            }
+        } else {
+            if(right == null) {
+                return false;
+            } else {
+                return right.contains(value);
+            }
+        }
+    }
+
+    public void printInOrder() {
+        if(left != null) {
+            left.printInOrder();
+        }
+        System.out.println(data);
+        if(right != null) {
+            right.printInOrder();
+        }
+    }
+
+    public void printPreOrder() {
+        System.out.println(data);
+        if(left != null) {
+            left.printPreOrder();
+        }
+        if(right != null) {
+            right.printPreOrder();
+        }
+    }
+
+    public void  printPostOrder() {
+        if(left != null) {
+            left.printPostOrder();
+        }
+        if(right != null) {
+            right.printPostOrder();
+        }
+        System.out.println(data);
+    }
+
+    public Node getLeft() {
+        return left;
+    }
+
+    public Node getRight() {
+        return right;
+    }
+
+    public int getData() {
+        return data;
     }
 }

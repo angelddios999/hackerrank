@@ -3,9 +3,7 @@ package com.angel.hackerrank;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-
-public class BinaryTreeHeightTest {
+public class NodeTest {
     private int[] values = new int[]{5, 2, 1, 4, 6, 7};
     private Node node = new Node(3);
 
@@ -17,7 +15,17 @@ public class BinaryTreeHeightTest {
     }
 
     @Test
-    public void testBinaryTreeHeight() {
-        assertEquals(3, BinaryTreeHeight.height(node));
+    public void testInOrder(){
+        node.printInOrder();
+    }
+
+    @Test
+    public void testPreOrder(){
+        node.printPreOrder();
+    }
+
+    @Test
+    public void testPostOrder(){
+        node.printPostOrder();
     }
 }
