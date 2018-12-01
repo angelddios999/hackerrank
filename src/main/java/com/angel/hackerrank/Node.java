@@ -1,9 +1,9 @@
 package com.angel.hackerrank;
 
 public class Node {
-    private Node left;
-    private Node right;
-    private int data;
+    Node left;
+    Node right;
+    int data;
 
     public Node(int data) {
         this.data = data;
@@ -84,5 +84,9 @@ public class Node {
 
     public int getData() {
         return data;
+    }
+
+    public String toString() {
+        return "Data: " + data;
     }
 }

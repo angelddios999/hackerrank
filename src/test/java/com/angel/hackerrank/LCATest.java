@@ -6,8 +6,8 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class LCATest {
-    private int[] values = new int[]{2, 3, 1, 7, 6};
-    private Node node = new Node(4);
+    private int[] values = new int[]{4, 9, 1, 2, 3, 6, 5};
+    private Node node = new Node(8);
 
     @Before
     public void setUp() {
@@ -18,7 +18,7 @@ public class LCATest {
 
     @Test
     public void testLCA() {
-        Node lca = LCA.lca(node, 1, 7);
-        assertEquals(4, lca.getData());
+        Node lca = LCA.lca(node, 1, 2);
+        assertEquals(1, lca.getData());
     }
 }
